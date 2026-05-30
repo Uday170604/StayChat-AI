@@ -1,0 +1,514 @@
+{
+  "mean_precision_at_k": 0.381,
+  "mean_reciprocal_rank": 1.0,
+  "top_k": 7,
+  "per_query": [
+    {
+      "query_id": "Q1",
+      "query": "Which hotels have free WiFi and complimentary breakfast?",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "amen_004_chunk_0",
+          "doc_id": "amen_004",
+          "hotel_name": "The Marina Grand",
+          "category": "amenities",
+          "title": "Marina Grand \u2014 Amenities",
+          "text": "Free WiFi, complimentary breakfast for all room categories, beach cabanas, outdoor pool, kids club, and seafood grill.",
+          "dense_score": 0.7225211262702942,
+          "bm25_score": 0.9929554803615102,
+          "score": 0.8171731502022197
+        },
+        {
+          "chunk_id": "amen_006_chunk_0",
+          "doc_id": "amen_006",
+          "hotel_name": "Sunset Bay Beach Hotel",
+          "category": "amenities",
+          "title": "Sunset Bay \u2014 Amenities",
+          "text": "Free WiFi in rooms and beach area. Complimentary light breakfast (fruit, bread, tea). Beach loungers and water sports desk.",
+          "dense_score": 0.6921659708023071,
+          "bm25_score": 1.0,
+          "score": 0.7999078810214997
+        },
+        {
+          "chunk_id": "amen_003_chunk_0",
+          "doc_id": "amen_003",
+          "hotel_name": "Kashi Riverside Resort",
+          "category": "amenities",
+          "title": "Kashi Riverside \u2014 Amenities",
+          "text": "Complimentary WiFi, complimentary breakfast buffet, infinity pool, full-service spa, gym, private ghat access, and fine-dining restaurant.",
+          "dense_score": 0.6553357839584351,
+          "bm25_score": 0.8046845306052195,
+          "score": 0.7076078452848096
+        },
+        {
+          "chunk_id": "amen_005_chunk_0",
+          "doc_id": "amen_005",
+          "hotel_name": "City Centre Metro Hotel",
+          "category": "amenities",
+          "title": "City Centre Metro \u2014 Amenities",
+          "text": "Complimentary WiFi in lobby only; in-room WiFi is paid. Continental breakfast included with executive rooms only. Business centre and gym on site.",
+          "dense_score": 0.6427593231201172,
+          "bm25_score": 0.703032153325873,
+          "score": 0.6638548136921317
+        },
+        {
+          "chunk_id": "amen_007_chunk_0",
+          "doc_id": "amen_007",
+          "hotel_name": "Hotel X Residency",
+          "category": "amenities",
+          "title": "Hotel X \u2014 Amenities",
+          "text": "High-speed WiFi complimentary in all rooms. Buffet breakfast included with standard booking. Fitness centre, laundry, and airport shuttle (paid).",
+          "dense_score": 0.7032427787780762,
+          "bm25_score": 0.6756060359709062,
+          "score": 0.6935699187955666
+        },
+        {
+          "chunk_id": "amen_001_chunk_0",
+          "doc_id": "amen_001",
+          "hotel_name": "Ganges View Heritage Hotel",
+          "category": "amenities",
+          "title": "Ganges View \u2014 Amenities",
+          "text": "Amenities include complimentary high-speed WiFi in all rooms and public areas. Guests receive a complimentary buffet breakfast daily from 6:30 to 10:00 AM in the ghat-view dining room.",
+          "dense_score": 0.6244009733200073,
+          "bm25_score": 0.6442739729035311,
+          "score": 0.6313565231742406
+        },
+        {
+          "chunk_id": "amen_002_chunk_0",
+          "doc_id": "amen_002",
+          "hotel_name": "Sacred Lotus Boutique Inn",
+          "category": "amenities",
+          "title": "Sacred Lotus \u2014 Amenities",
+          "text": "Free WiFi throughout the property. Breakfast is available at the rooftop cafe for an additional charge (not complimentary). No spa; small fitness corner.",
+          "dense_score": 0.7499327063560486,
+          "bm25_score": 0.7656265708401921,
+          "score": 0.7554255589254988
+        }
+      ],
+      "precision_at_k_workings": {
+        "k": 7,
+        "retrieved_top_k": [
+          "amen_004_chunk_0",
+          "amen_006_chunk_0",
+          "amen_003_chunk_0",
+          "amen_005_chunk_0",
+          "amen_007_chunk_0",
+          "amen_001_chunk_0",
+          "amen_002_chunk_0"
+        ],
+        "relevant_set": [
+          "amen_001_chunk_0",
+          "amen_003_chunk_0",
+          "amen_004_chunk_0",
+          "amen_006_chunk_0",
+          "amen_007_chunk_0"
+        ],
+        "hits_in_top_k": [
+          "amen_004_chunk_0",
+          "amen_006_chunk_0",
+          "amen_003_chunk_0",
+          "amen_007_chunk_0",
+          "amen_001_chunk_0"
+        ],
+        "formula": "Precision@7 = hits / k = 5 / 7",
+        "value": 0.7143
+      },
+      "reciprocal_rank_workings": {
+        "first_relevant_rank": 1,
+        "formula": "Reciprocal Rank = 1 / rank of first relevant chunk (0 if none)",
+        "value": 1.0
+      },
+      "llm_answer": "Based on the retrieved documents:\n- **The Marina Grand**: Free WiFi, complimentary breakfast for all room categories, beach cabanas, outdoor pool, kids club, and seafood grill. [amen_004_chunk_0]\n- **Sunset Bay Beach Hotel**: Complimentary light breakfast (fruit, bread, tea). [amen_006_chunk_0]\n- **Kashi Riverside Resort**: Complimentary WiFi, complimentary breakfast buffet, infinity pool, full-service spa, gym, private ghat access, and fine-dining restaurant. [amen_003_chunk_0]\n- **Hotel X Residency**: High-speed WiFi complimentary in all rooms. [amen_007_chunk_0]\n- **Ganges View Heritage Hotel**: Amenities include complimentary high-speed WiFi in all rooms and public areas. [amen_001_chunk_0]",
+      "generation_meta": {
+        "backend": "mock",
+        "abstained": false,
+        "top_score": 0.8171731502022197,
+        "controls_enabled": true
+      },
+      "qualitative": [
+        "**Retrieval**",
+        "- Retrieved 5/5 labeled-relevant chunks in top-7.",
+        "**Generation**",
+        "- Answer grounded with chunk citations; backend: **mock**.",
+        "- Ganges View Heritage included (WiFi + complimentary buffet breakfast).",
+        "**Improvement**",
+        "- Add cross-encoder reranker; optional metadata filter `amenity:wifi AND breakfast:complimentary`."
+      ]
+    },
+    {
+      "query_id": "Q2",
+      "query": "What is the cancellation policy of Hotel X?",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "pol_001_chunk_0",
+          "doc_id": "pol_001",
+          "hotel_name": "Hotel X Residency",
+          "category": "policies",
+          "title": "Hotel X Residency \u2014 Cancellation Policy",
+          "text": "Cancellation policy for Hotel X Residency: Free cancellation up to 48 hours before check-in. Cancellations within 48 hours incur one night charge. No-shows are charged 100% of the booking. Refunds processed within 7 business days to the original payment method.",
+          "dense_score": 0.7378343343734741,
+          "bm25_score": 1.0,
+          "score": 0.8295923173427582
+        },
+        {
+          "chunk_id": "desc_009_chunk_0",
+          "doc_id": "desc_009",
+          "hotel_name": "Hotel X Residency",
+          "category": "hotel_description",
+          "title": "Hotel X Residency \u2014 Overview",
+          "text": "Hotel X Residency is a 4-star business hotel in central Varanasi near the railway station. Known for reliable service, meeting rooms, and express check-in for corporate guests.",
+          "dense_score": 0.4514917731285095,
+          "bm25_score": 0.46330288627570204,
+          "score": 0.4556256627300269
+        },
+        {
+          "chunk_id": "pol_006_chunk_0",
+          "doc_id": "pol_006",
+          "hotel_name": "City Centre Metro Hotel",
+          "category": "policies",
+          "title": "City Centre Metro \u2014 Policies",
+          "text": "Check-in 12:00 PM. Corporate bookings: 24-hour cancellation window. Leisure bookings: 48-hour free cancellation. Valid ID mandatory.",
+          "dense_score": 0.5989702939987183,
+          "bm25_score": 0.25578266167687386,
+          "score": 0.47885462268607276
+        },
+        {
+          "chunk_id": "pol_007_chunk_0",
+          "doc_id": "pol_007",
+          "hotel_name": "Sunset Bay Beach Hotel",
+          "category": "policies",
+          "title": "Sunset Bay \u2014 Policies",
+          "text": "Check-in 2:00 PM. Free cancellation up to 5 days before stay during monsoon season; otherwise 3 days prior. Refunds via UPI or card within 10 days.",
+          "dense_score": 0.5046998262405396,
+          "bm25_score": 0.15820631296310345,
+          "score": 0.38342709659343693
+        },
+        {
+          "chunk_id": "pol_002_chunk_0",
+          "doc_id": "pol_002",
+          "hotel_name": "Ganges View Heritage Hotel",
+          "category": "policies",
+          "title": "Ganges View \u2014 Policies",
+          "text": "Check-in 2:00 PM, check-out 11:00 AM. Cancellation: free until 72 hours prior; 50% charge within 72 hours. Pets not allowed. Government photo ID required at check-in.",
+          "dense_score": 0.40386658906936646,
+          "bm25_score": 0.1504074102114012,
+          "score": 0.3151558764690786
+        },
+        {
+          "chunk_id": "pol_005_chunk_0",
+          "doc_id": "pol_005",
+          "hotel_name": "Sacred Lotus Boutique Inn",
+          "category": "policies",
+          "title": "Sacred Lotus \u2014 Policies",
+          "text": "Check-in 1:00 PM, check-out 10:00 AM. Cancellation within 24 hours: first night charged. Small pets under 10 kg allowed with prior approval.",
+          "dense_score": 0.37337130308151245,
+          "bm25_score": 0.1638709891305803,
+          "score": 0.3000461931986862
+        },
+        {
+          "chunk_id": "pol_003_chunk_0",
+          "doc_id": "pol_003",
+          "hotel_name": "The Marina Grand",
+          "category": "policies",
+          "title": "Marina Grand \u2014 Policies",
+          "text": "Check-in 3:00 PM, check-out 12:00 PM. Flexible cancellation until 24 hours before arrival. Pet-friendly rooms available on request (surcharge applies). Passport or Aadhaar required.",
+          "dense_score": 0.3561716377735138,
+          "bm25_score": 0.1555183416263517,
+          "score": 0.285942984122007
+        }
+      ],
+      "precision_at_k_workings": {
+        "k": 7,
+        "retrieved_top_k": [
+          "pol_001_chunk_0",
+          "desc_009_chunk_0",
+          "pol_006_chunk_0",
+          "pol_007_chunk_0",
+          "pol_002_chunk_0",
+          "pol_005_chunk_0",
+          "pol_003_chunk_0"
+        ],
+        "relevant_set": [
+          "pol_001_chunk_0"
+        ],
+        "hits_in_top_k": [
+          "pol_001_chunk_0"
+        ],
+        "formula": "Precision@7 = hits / k = 1 / 7",
+        "value": 0.1429
+      },
+      "reciprocal_rank_workings": {
+        "first_relevant_rank": 1,
+        "formula": "Reciprocal Rank = 1 / rank of first relevant chunk (0 if none)",
+        "value": 1.0
+      },
+      "llm_answer": "Cancellation policy for Hotel X Residency: Free cancellation up to 48 hours before check-in. Cancellations within 48 hours incur one night charge. No-shows are charged 100% of the booking. Refunds processed within 7 business days to the original payment method. [pol_001_chunk_0]",
+      "generation_meta": {
+        "backend": "mock",
+        "abstained": false,
+        "top_score": 0.8295923173427582,
+        "controls_enabled": true
+      },
+      "qualitative": [
+        "**Retrieval**",
+        "- Retrieved 1/1 labeled-relevant chunks in top-7.",
+        "- Top-ranked noise (e.g. `desc_009_chunk_0`): semantic overlap without satisfying all query constraints; hybrid BM25 + reranking penalizes paid-breakfast / low-rating false positives.",
+        "**Generation**",
+        "- Answer grounded with chunk citations; backend: **mock**.",
+        "- Hotel X policy answered from dedicated policy document (rank #1).",
+        "**Improvement**",
+        "- Entity linking on hotel name + policy category filter before generation."
+      ]
+    },
+    {
+      "query_id": "Q3",
+      "query": "Suggest a hotel with excellent reviews near the beach.",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "rev_003_chunk_0",
+          "doc_id": "rev_003",
+          "hotel_name": "The Marina Grand",
+          "category": "guest_review",
+          "title": "Review \u2014 Marina Grand (Excellent)",
+          "text": "Rating: 4.9/5. 'Excellent beach location steps from the sand. Kids loved the pool. Outstanding reviews for cleanliness and breakfast. Best beach hotel we have stayed in.' Anita & Rahul K., February 2025.",
+          "dense_score": 0.6389503479003906,
+          "bm25_score": 1.0,
+          "score": 0.765317726135254
+        },
+        {
+          "chunk_id": "rev_009_chunk_0",
+          "doc_id": "rev_009",
+          "hotel_name": "The Marina Grand",
+          "category": "guest_review",
+          "title": "Review \u2014 Marina Grand (Negative detail)",
+          "text": "Rating: 3.8/5. 'Beach is crowded in peak season but hotel itself is excellent. Would still recommend for families.' Chris W., January 2025.",
+          "dense_score": 0.7329188585281372,
+          "bm25_score": 0.5888846896553671,
+          "score": 0.6825068994226677
+        },
+        {
+          "chunk_id": "desc_005_chunk_0",
+          "doc_id": "desc_005",
+          "hotel_name": "Sunset Bay Beach Hotel",
+          "category": "hotel_description",
+          "title": "Sunset Bay Beach Hotel \u2014 Overview",
+          "text": "Sunset Bay Beach Hotel is a 3-star property in South Goa with direct beach access. Known for sunset views and relaxed backpacker-luxe atmosphere.",
+          "dense_score": 0.5726380348205566,
+          "bm25_score": 0.6428489278581643,
+          "score": 0.5972118473837194
+        },
+        {
+          "chunk_id": "rev_004_chunk_0",
+          "doc_id": "rev_004",
+          "hotel_name": "Sunset Bay Beach Hotel",
+          "category": "guest_review",
+          "title": "Review \u2014 Sunset Bay (Positive)",
+          "text": "Rating: 4.2/5. 'Great value near the beach. Simple breakfast but fresh. Friendly staff.' Marco T., December 2024.",
+          "dense_score": 0.48834115266799927,
+          "bm25_score": 0.5045228126045036,
+          "score": 0.4940047336457758
+        },
+        {
+          "chunk_id": "rev_005_chunk_0",
+          "doc_id": "rev_005",
+          "hotel_name": "Kashi Riverside Resort",
+          "category": "guest_review",
+          "title": "Review \u2014 Kashi Riverside (Positive)",
+          "text": "Rating: 4.7/5. 'Luxurious spa and flawless service. Worth the premium price.' Elena S., April 2025.",
+          "dense_score": 0.37815895676612854,
+          "bm25_score": 0.05568918364816441,
+          "score": 0.2652945361748411
+        },
+        {
+          "chunk_id": "desc_004_chunk_0",
+          "doc_id": "desc_004",
+          "hotel_name": "The Marina Grand",
+          "category": "hotel_description",
+          "title": "The Marina Grand \u2014 Beach Resort Overview",
+          "text": "The Marina Grand is a 4-star beachfront resort in Goa, 50 metres from Calangute Beach. Family-friendly positioning with kids club and sea-view balconies. Ambiance: coastal, vibrant.",
+          "dense_score": 0.4255933165550232,
+          "bm25_score": 0.47421336475812376,
+          "score": 0.4426103334261084
+        },
+        {
+          "chunk_id": "amen_006_chunk_0",
+          "doc_id": "amen_006",
+          "hotel_name": "Sunset Bay Beach Hotel",
+          "category": "amenities",
+          "title": "Sunset Bay \u2014 Amenities",
+          "text": "Free WiFi in rooms and beach area. Complimentary light breakfast (fruit, bread, tea). Beach loungers and water sports desk.",
+          "dense_score": 0.5251280069351196,
+          "bm25_score": 0.24755208842095083,
+          "score": 0.42797643545516056
+        }
+      ],
+      "precision_at_k_workings": {
+        "k": 7,
+        "retrieved_top_k": [
+          "rev_003_chunk_0",
+          "rev_009_chunk_0",
+          "desc_005_chunk_0",
+          "rev_004_chunk_0",
+          "rev_005_chunk_0",
+          "desc_004_chunk_0",
+          "amen_006_chunk_0"
+        ],
+        "relevant_set": [
+          "desc_004_chunk_0",
+          "loc_001_chunk_0",
+          "rev_003_chunk_0"
+        ],
+        "hits_in_top_k": [
+          "rev_003_chunk_0",
+          "desc_004_chunk_0"
+        ],
+        "formula": "Precision@7 = hits / k = 2 / 7",
+        "value": 0.2857
+      },
+      "reciprocal_rank_workings": {
+        "first_relevant_rank": 1,
+        "formula": "Reciprocal Rank = 1 / rank of first relevant chunk (0 if none)",
+        "value": 1.0
+      },
+      "llm_answer": "I suggest **The Marina Grand**: 'Excellent beach location steps from the sand. Outstanding reviews for cleanliness and breakfast. [rev_003_chunk_0]",
+      "generation_meta": {
+        "backend": "mock",
+        "abstained": false,
+        "top_score": 0.765317726135254,
+        "controls_enabled": true
+      },
+      "qualitative": [
+        "**Retrieval**",
+        "- Retrieved 2/3 labeled-relevant chunks in top-7.",
+        "- Top-ranked noise (e.g. `rev_009_chunk_0`): semantic overlap without satisfying all query constraints; hybrid BM25 + reranking penalizes paid-breakfast / low-rating false positives.",
+        "- Missed relevant chunks: `loc_001_chunk_0` \u2014 consider higher k, metadata filters, or cross-encoder reranking.",
+        "**Generation**",
+        "- Answer grounded with chunk citations; backend: **mock**.",
+        "- Recommendation prioritizes highest guest rating (4.9/5) over weaker 'excellent' wording at 3.8/5.",
+        "- Location chunk `loc_001` not in top-k; answer still valid from review + description context.",
+        "**Improvement**",
+        "- Boost `guest_review` + numeric rating features in reranker; fuse location chunks for beach proximity."
+      ]
+    }
+  ],
+  "edge_case": {
+    "query_id": "EDGE1",
+    "query": "Which hotels allow pet tigers?",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "pol_003_chunk_0",
+        "doc_id": "pol_003",
+        "hotel_name": "The Marina Grand",
+        "category": "policies",
+        "title": "Marina Grand \u2014 Policies",
+        "text": "Check-in 3:00 PM, check-out 12:00 PM. Flexible cancellation until 24 hours before arrival. Pet-friendly rooms available on request (surcharge applies). Passport or Aadhaar required.",
+        "dense_score": 0.3150123357772827,
+        "bm25_score": 1.0,
+        "score": 0.5547580182552337
+      },
+      {
+        "chunk_id": "pol_005_chunk_0",
+        "doc_id": "pol_005",
+        "hotel_name": "Sacred Lotus Boutique Inn",
+        "category": "policies",
+        "title": "Sacred Lotus \u2014 Policies",
+        "text": "Check-in 1:00 PM, check-out 10:00 AM. Cancellation within 24 hours: first night charged. Small pets under 10 kg allowed with prior approval.",
+        "dense_score": 0.5010902881622314,
+        "bm25_score": 0.0,
+        "score": 0.32570868730545044
+      },
+      {
+        "chunk_id": "pol_002_chunk_0",
+        "doc_id": "pol_002",
+        "hotel_name": "Ganges View Heritage Hotel",
+        "category": "policies",
+        "title": "Ganges View \u2014 Policies",
+        "text": "Check-in 2:00 PM, check-out 11:00 AM. Cancellation: free until 72 hours prior; 50% charge within 72 hours. Pets not allowed. Government photo ID required at check-in.",
+        "dense_score": 0.45589232444763184,
+        "bm25_score": 0.0,
+        "score": 0.2963300108909607
+      },
+      {
+        "chunk_id": "pol_004_chunk_0",
+        "doc_id": "pol_004",
+        "hotel_name": "Kashi Riverside Resort",
+        "category": "policies",
+        "title": "Kashi Riverside \u2014 Policies",
+        "text": "Check-in 2:00 PM. Non-refundable rate available at 15% discount. Standard rate: cancel 7 days prior for full refund. No pets.",
+        "dense_score": 0.3618815839290619,
+        "bm25_score": 0.0,
+        "score": 0.23522302955389024
+      },
+      {
+        "chunk_id": "desc_003_chunk_0",
+        "doc_id": "desc_003",
+        "hotel_name": "Kashi Riverside Resort",
+        "category": "hotel_description",
+        "title": "Kashi Riverside Resort \u2014 Overview",
+        "text": "Kashi Riverside Resort is a 5-star resort on the Ganges with private ghats and spa villas. Premium leisure positioning for honeymoons and wellness retreats. Star rating: 5.",
+        "dense_score": 0.3605738878250122,
+        "bm25_score": 0.0,
+        "score": 0.23437302708625793
+      },
+      {
+        "chunk_id": "amen_003_chunk_0",
+        "doc_id": "amen_003",
+        "hotel_name": "Kashi Riverside Resort",
+        "category": "amenities",
+        "title": "Kashi Riverside \u2014 Amenities",
+        "text": "Complimentary WiFi, complimentary breakfast buffet, infinity pool, full-service spa, gym, private ghat access, and fine-dining restaurant.",
+        "dense_score": 0.34046632051467896,
+        "bm25_score": 0.0,
+        "score": 0.22130310833454134
+      },
+      {
+        "chunk_id": "desc_001_chunk_0",
+        "doc_id": "desc_001",
+        "hotel_name": "Ganges View Heritage Hotel",
+        "category": "hotel_description",
+        "title": "Ganges View Heritage Hotel \u2014 Property Overview",
+        "text": "Ganges View Heritage Hotel is a 4-star boutique property on Assi Ghat, Varanasi. The hotel blends colonial architecture with modern comfort, targeting cultural travellers and pilgrims.",
+        "dense_score": 0.3356039822101593,
+        "bm25_score": 0.0,
+        "score": 0.21814258843660356
+      }
+    ],
+    "precision_at_k_workings": {
+      "k": 7,
+      "retrieved_top_k": [
+        "pol_003_chunk_0",
+        "pol_005_chunk_0",
+        "pol_002_chunk_0",
+        "pol_004_chunk_0",
+        "desc_003_chunk_0",
+        "amen_003_chunk_0",
+        "desc_001_chunk_0"
+      ],
+      "relevant_set": [],
+      "hits_in_top_k": [],
+      "formula": "Precision@7 = hits / k = 0 / 7",
+      "value": 0.0
+    },
+    "reciprocal_rank_workings": {
+      "first_relevant_rank": null,
+      "formula": "Reciprocal Rank = 1 / rank of first relevant chunk (0 if none)",
+      "value": 0.0
+    },
+    "llm_answer": "I don't have enough information in the provided documents to answer that.",
+    "generation_meta": {
+      "backend": null,
+      "abstained": true,
+      "top_score": 0.5547580182552337,
+      "controls_enabled": true
+    },
+    "qualitative": [
+      "**Retrieval**",
+      "- Partial recall: only 0/0 relevant chunks in top-7.",
+      "- Top-ranked noise (e.g. `pol_003_chunk_0`): semantic overlap without satisfying all query constraints; hybrid BM25 + reranking penalizes paid-breakfast / low-rating false positives.",
+      "**Generation**",
+      "- Faithful abstention when context cannot support the question.",
+      "**Improvement**",
+      "- Entity linking on hotel name + policy category filter before generation."
+    ]
+  }
+}

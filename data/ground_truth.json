@@ -1,0 +1,39 @@
+{
+  "description": "Relevance judgments for retrieval evaluation. chunk_id is relevant (1) or not (0) per query.",
+  "queries": [
+    {
+      "query_id": "Q1",
+      "text": "Which hotels have free WiFi and complimentary breakfast?",
+      "relevant_chunk_ids": [
+        "amen_001_chunk_0",
+        "amen_003_chunk_0",
+        "amen_004_chunk_0",
+        "amen_006_chunk_0",
+        "amen_007_chunk_0"
+      ],
+      "notes": "Sacred Lotus has WiFi but paid breakfast; City Centre has limited WiFi — excluded. Evaluated at k=7 with hybrid retrieval."
+    },
+    {
+      "query_id": "Q2",
+      "text": "What is the cancellation policy of Hotel X?",
+      "relevant_chunk_ids": [
+        "pol_001_chunk_0"
+      ]
+    },
+    {
+      "query_id": "Q3",
+      "text": "Suggest a hotel with excellent reviews near the beach.",
+      "relevant_chunk_ids": [
+        "rev_003_chunk_0",
+        "loc_001_chunk_0",
+        "desc_004_chunk_0"
+      ]
+    }
+  ],
+  "edge_case_query": {
+    "query_id": "EDGE1",
+    "text": "Which hotels allow pet tigers?",
+    "relevant_chunk_ids": [],
+    "notes": "No document mentions exotic pets — tests abstention / hallucination control."
+  }
+}

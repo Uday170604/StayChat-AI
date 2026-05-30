@@ -1,0 +1,441 @@
+"""Generate synthetic hotel corpus (40 documents) for the assessment."""
+
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "data" / "hotel_documents.json"
+
+DOCUMENTS = [
+    # --- Hotel Descriptions (9) ---
+    {
+        "id": "desc_001",
+        "category": "hotel_description",
+        "hotel_name": "Ganges View Heritage Hotel",
+        "title": "Ganges View Heritage Hotel — Property Overview",
+        "text": (
+            "Ganges View Heritage Hotel is a 4-star boutique property on Assi Ghat, Varanasi. "
+            "The hotel blends colonial architecture with modern comfort, targeting cultural travellers "
+            "and pilgrims. Brand positioning emphasizes riverside serenity, curated heritage walks, "
+            "and locally sourced cuisine. Star rating: 4. Ambiance: tranquil, spiritual, refined."
+        ),
+    },
+    {
+        "id": "desc_002",
+        "category": "hotel_description",
+        "hotel_name": "Sacred Lotus Boutique Inn",
+        "title": "Sacred Lotus Boutique Inn — Overview",
+        "text": (
+            "Sacred Lotus Boutique Inn is a 3-star design-led inn near Godowlia Chowk. "
+            "Compact rooms, artisan decor, and a rooftop cafe define the experience. "
+            "Positioned for budget-conscious explorers seeking authentic neighbourhood stays."
+        ),
+    },
+    {
+        "id": "desc_003",
+        "category": "hotel_description",
+        "hotel_name": "Kashi Riverside Resort",
+        "title": "Kashi Riverside Resort — Overview",
+        "text": (
+            "Kashi Riverside Resort is a 5-star resort on the Ganges with private ghats and spa villas. "
+            "Premium leisure positioning for honeymoons and wellness retreats. Star rating: 5."
+        ),
+    },
+    {
+        "id": "desc_004",
+        "category": "hotel_description",
+        "hotel_name": "The Marina Grand",
+        "title": "The Marina Grand — Beach Resort Overview",
+        "text": (
+            "The Marina Grand is a 4-star beachfront resort in Goa, 50 metres from Calangute Beach. "
+            "Family-friendly positioning with kids club and sea-view balconies. Ambiance: coastal, vibrant."
+        ),
+    },
+    {
+        "id": "desc_005",
+        "category": "hotel_description",
+        "hotel_name": "Sunset Bay Beach Hotel",
+        "title": "Sunset Bay Beach Hotel — Overview",
+        "text": (
+            "Sunset Bay Beach Hotel is a 3-star property in South Goa with direct beach access. "
+            "Known for sunset views and relaxed backpacker-luxe atmosphere."
+        ),
+    },
+    {
+        "id": "desc_006",
+        "category": "hotel_description",
+        "hotel_name": "Royal Varuna Palace",
+        "title": "Royal Varuna Palace — Overview",
+        "text": (
+            "Royal Varuna Palace is a 5-star palace hotel near Varanasi Cantonment. "
+            "Heritage luxury brand with banquet halls and royal suites for destination weddings."
+        ),
+    },
+    {
+        "id": "desc_007",
+        "category": "hotel_description",
+        "hotel_name": "City Centre Metro Hotel",
+        "title": "City Centre Metro Hotel — Overview",
+        "text": (
+            "City Centre Metro Hotel is a 3-star business hotel linked to Varanasi City metro station. "
+            "Efficient, modern, aimed at corporate travellers and conference delegates."
+        ),
+    },
+    {
+        "id": "desc_008",
+        "category": "hotel_description",
+        "hotel_name": "Himalayan Retreat Lodge",
+        "title": "Himalayan Retreat Lodge — Overview",
+        "text": (
+            "Himalayan Retreat Lodge is a 4-star eco-lodge in Rishikesh with mountain views. "
+            "Adventure and yoga positioning for nature-focused guests."
+        ),
+    },
+    {
+        "id": "desc_009",
+        "category": "hotel_description",
+        "hotel_name": "Hotel X Residency",
+        "title": "Hotel X Residency — Overview",
+        "text": (
+            "Hotel X Residency is a 4-star business hotel in central Varanasi near the railway station. "
+            "Known for reliable service, meeting rooms, and express check-in for corporate guests."
+        ),
+    },
+    # --- Amenities (7) ---
+    {
+        "id": "amen_001",
+        "category": "amenities",
+        "hotel_name": "Ganges View Heritage Hotel",
+        "title": "Ganges View — Amenities",
+        "text": (
+            "Amenities include complimentary high-speed WiFi in all rooms and public areas. "
+            "Guests receive a complimentary buffet breakfast daily from 6:30 to 10:00 AM in the ghat-view dining room. "
+            "Additional facilities: riverside yoga deck, Ayurvedic spa, 24-hour concierge, in-room tea station, "
+            "and laundry service. Parking is available on request."
+        ),
+    },
+    {
+        "id": "amen_002",
+        "category": "amenities",
+        "hotel_name": "Sacred Lotus Boutique Inn",
+        "title": "Sacred Lotus — Amenities",
+        "text": (
+            "Free WiFi throughout the property. Breakfast is available at the rooftop cafe "
+            "for an additional charge (not complimentary). No spa; small fitness corner."
+        ),
+    },
+    {
+        "id": "amen_003",
+        "category": "amenities",
+        "hotel_name": "Kashi Riverside Resort",
+        "title": "Kashi Riverside — Amenities",
+        "text": (
+            "Complimentary WiFi, complimentary breakfast buffet, infinity pool, full-service spa, "
+            "gym, private ghat access, and fine-dining restaurant."
+        ),
+    },
+    {
+        "id": "amen_004",
+        "category": "amenities",
+        "hotel_name": "The Marina Grand",
+        "title": "Marina Grand — Amenities",
+        "text": (
+            "Free WiFi, complimentary breakfast for all room categories, beach cabanas, "
+            "outdoor pool, kids club, and seafood grill."
+        ),
+    },
+    {
+        "id": "amen_005",
+        "category": "amenities",
+        "hotel_name": "City Centre Metro Hotel",
+        "title": "City Centre Metro — Amenities",
+        "text": (
+            "Complimentary WiFi in lobby only; in-room WiFi is paid. Continental breakfast "
+            "included with executive rooms only. Business centre and gym on site."
+        ),
+    },
+    {
+        "id": "amen_006",
+        "category": "amenities",
+        "hotel_name": "Sunset Bay Beach Hotel",
+        "title": "Sunset Bay — Amenities",
+        "text": (
+            "Free WiFi in rooms and beach area. Complimentary light breakfast (fruit, bread, tea). "
+            "Beach loungers and water sports desk."
+        ),
+    },
+    {
+        "id": "amen_007",
+        "category": "amenities",
+        "hotel_name": "Hotel X Residency",
+        "title": "Hotel X — Amenities",
+        "text": (
+            "High-speed WiFi complimentary in all rooms. Buffet breakfast included with standard booking. "
+            "Fitness centre, laundry, and airport shuttle (paid)."
+        ),
+    },
+    # --- Guest Reviews (10) ---
+    {
+        "id": "rev_001",
+        "category": "guest_review",
+        "hotel_name": "Ganges View Heritage Hotel",
+        "title": "Review — Ganges View (Positive)",
+        "text": (
+            "Rating: 4.5/5. 'Stunning ghat views and attentive staff. Breakfast spread was excellent. "
+            "WiFi worked well for remote work.' — Priya M., March 2025."
+        ),
+    },
+    {
+        "id": "rev_002",
+        "category": "guest_review",
+        "hotel_name": "Sacred Lotus Boutique Inn",
+        "title": "Review — Sacred Lotus (Neutral)",
+        "text": (
+            "Rating: 3.5/5. 'Charming rooms but breakfast is overpriced. WiFi dropped in the evening.' "
+            "— James L., January 2025."
+        ),
+    },
+    {
+        "id": "rev_003",
+        "category": "guest_review",
+        "hotel_name": "The Marina Grand",
+        "title": "Review — Marina Grand (Excellent)",
+        "text": (
+            "Rating: 4.9/5. 'Excellent beach location steps from the sand. Kids loved the pool. "
+            "Outstanding reviews for cleanliness and breakfast. Best beach hotel we have stayed in.' "
+            "— Anita & Rahul K., February 2025."
+        ),
+    },
+    {
+        "id": "rev_004",
+        "category": "guest_review",
+        "hotel_name": "Sunset Bay Beach Hotel",
+        "title": "Review — Sunset Bay (Positive)",
+        "text": (
+            "Rating: 4.2/5. 'Great value near the beach. Simple breakfast but fresh. Friendly staff.' "
+            "— Marco T., December 2024."
+        ),
+    },
+    {
+        "id": "rev_005",
+        "category": "guest_review",
+        "hotel_name": "Kashi Riverside Resort",
+        "title": "Review — Kashi Riverside (Positive)",
+        "text": (
+            "Rating: 4.7/5. 'Luxurious spa and flawless service. Worth the premium price.' "
+            "— Elena S., April 2025."
+        ),
+    },
+    {
+        "id": "rev_006",
+        "category": "guest_review",
+        "hotel_name": "City Centre Metro Hotel",
+        "title": "Review — City Centre (Negative)",
+        "text": (
+            "Rating: 2.8/5. 'Noisy rooms facing the metro. Paid WiFi frustrating. Breakfast only for executives.' "
+            "— David P., November 2024."
+        ),
+    },
+    {
+        "id": "rev_007",
+        "category": "guest_review",
+        "hotel_name": "Royal Varuna Palace",
+        "title": "Review — Royal Varuna (Positive)",
+        "text": (
+            "Rating: 4.6/5. 'Palatial rooms and grand weddings venue. Food was exceptional.' "
+            "— Meera J., October 2024."
+        ),
+    },
+    {
+        "id": "rev_008",
+        "category": "guest_review",
+        "hotel_name": "Hotel X Residency",
+        "title": "Review — Hotel X (Neutral)",
+        "text": (
+            "Rating: 3.9/5. 'Solid business hotel. Good WiFi and breakfast. Nothing exceptional but reliable.' "
+            "— Sanjay R., March 2025."
+        ),
+    },
+    {
+        "id": "rev_009",
+        "category": "guest_review",
+        "hotel_name": "The Marina Grand",
+        "title": "Review — Marina Grand (Negative detail)",
+        "text": (
+            "Rating: 3.8/5. 'Beach is crowded in peak season but hotel itself is excellent. "
+            "Would still recommend for families.' — Chris W., January 2025."
+        ),
+    },
+    {
+        "id": "rev_010",
+        "category": "guest_review",
+        "hotel_name": "Himalayan Retreat Lodge",
+        "title": "Review — Himalayan Retreat",
+        "text": (
+            "Rating: 4.4/5. 'Peaceful mountain stay. Yoga sessions at sunrise were highlight.' "
+            "— Nina F., February 2025."
+        ),
+    },
+    # --- Policies (7) ---
+    {
+        "id": "pol_001",
+        "category": "policies",
+        "hotel_name": "Hotel X Residency",
+        "title": "Hotel X Residency — Cancellation Policy",
+        "text": (
+            "Cancellation policy for Hotel X Residency: Free cancellation up to 48 hours before check-in. "
+            "Cancellations within 48 hours incur one night charge. No-shows are charged 100% of the booking. "
+            "Refunds processed within 7 business days to the original payment method."
+        ),
+    },
+    {
+        "id": "pol_002",
+        "category": "policies",
+        "hotel_name": "Ganges View Heritage Hotel",
+        "title": "Ganges View — Policies",
+        "text": (
+            "Check-in 2:00 PM, check-out 11:00 AM. Cancellation: free until 72 hours prior; "
+            "50% charge within 72 hours. Pets not allowed. Government photo ID required at check-in."
+        ),
+    },
+    {
+        "id": "pol_003",
+        "category": "policies",
+        "hotel_name": "The Marina Grand",
+        "title": "Marina Grand — Policies",
+        "text": (
+            "Check-in 3:00 PM, check-out 12:00 PM. Flexible cancellation until 24 hours before arrival. "
+            "Pet-friendly rooms available on request (surcharge applies). Passport or Aadhaar required."
+        ),
+    },
+    {
+        "id": "pol_004",
+        "category": "policies",
+        "hotel_name": "Kashi Riverside Resort",
+        "title": "Kashi Riverside — Policies",
+        "text": (
+            "Check-in 2:00 PM. Non-refundable rate available at 15% discount. "
+            "Standard rate: cancel 7 days prior for full refund. No pets."
+        ),
+    },
+    {
+        "id": "pol_005",
+        "category": "policies",
+        "hotel_name": "Sacred Lotus Boutique Inn",
+        "title": "Sacred Lotus — Policies",
+        "text": (
+            "Check-in 1:00 PM, check-out 10:00 AM. Cancellation within 24 hours: first night charged. "
+            "Small pets under 10 kg allowed with prior approval."
+        ),
+    },
+    {
+        "id": "pol_006",
+        "category": "policies",
+        "hotel_name": "City Centre Metro Hotel",
+        "title": "City Centre Metro — Policies",
+        "text": (
+            "Check-in 12:00 PM. Corporate bookings: 24-hour cancellation window. "
+            "Leisure bookings: 48-hour free cancellation. Valid ID mandatory."
+        ),
+    },
+    {
+        "id": "pol_007",
+        "category": "policies",
+        "hotel_name": "Sunset Bay Beach Hotel",
+        "title": "Sunset Bay — Policies",
+        "text": (
+            "Check-in 2:00 PM. Free cancellation up to 5 days before stay during monsoon season; "
+            "otherwise 3 days prior. Refunds via UPI or card within 10 days."
+        ),
+    },
+    # --- Location (7) ---
+    {
+        "id": "loc_001",
+        "category": "location",
+        "hotel_name": "The Marina Grand",
+        "title": "Marina Grand — Location",
+        "text": (
+            "Located at Calangute Beach, Goa — 50 metres from the main beach entrance. "
+            "Nearby: Baga Beach (2 km), Saturday Night Market (1.5 km). "
+            "Goa International Airport 40 km (approx. 75 min by taxi)."
+        ),
+    },
+    {
+        "id": "loc_002",
+        "category": "location",
+        "hotel_name": "Sunset Bay Beach Hotel",
+        "title": "Sunset Bay — Location",
+        "text": (
+            "South Goa, Palolem area — beachfront road, 100 m to Palolem Beach. "
+            "Quiet neighbourhood, dolphin-watching boats nearby."
+        ),
+    },
+    {
+        "id": "loc_003",
+        "category": "location",
+        "hotel_name": "Ganges View Heritage Hotel",
+        "title": "Ganges View — Location",
+        "text": (
+            "Assi Ghat, Varanasi — 500 m from Assi Ghat steps, 4 km from Varanasi Junction railway station. "
+            "Near: Banaras Hindu University (3 km), local boat jetty (200 m)."
+        ),
+    },
+    {
+        "id": "loc_004",
+        "category": "location",
+        "hotel_name": "Hotel X Residency",
+        "title": "Hotel X — Location",
+        "text": (
+            "Cantonment area, Varanasi — 1.2 km from Varanasi Junction, 45 min from Lal Bahadur Shastri Airport. "
+            "Auto-rickshaw stand outside the hotel."
+        ),
+    },
+    {
+        "id": "loc_005",
+        "category": "location",
+        "hotel_name": "Kashi Riverside Resort",
+        "title": "Kashi Riverside — Location",
+        "text": (
+            "Riverside Road, Varanasi — private ghat access, 6 km from city centre. "
+            "Temple circuit tours depart from the hotel jetty."
+        ),
+    },
+    {
+        "id": "loc_006",
+        "category": "location",
+        "hotel_name": "City Centre Metro Hotel",
+        "title": "City Centre Metro — Location",
+        "text": (
+            "Connected to Varanasi City Metro Station (Exit B). "
+            "2 km from Godowlia market, 15 min metro to Assi Ghat."
+        ),
+    },
+    {
+        "id": "loc_007",
+        "category": "location",
+        "hotel_name": "Sacred Lotus Boutique Inn",
+        "title": "Sacred Lotus — Location",
+        "text": (
+            "Godowlia Chowk, old city Varanasi — walking distance to Kashi Vishwanath corridor (15 min). "
+            "Narrow lanes; hotel offers golf-cart pickup from main road."
+        ),
+    },
+]
+
+
+def main() -> None:
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "metadata": {
+            "source": "Synthetic dataset created for StayChat AI assessment",
+            "license": "MIT — free to use for evaluation",
+            "document_count": len(DOCUMENTS),
+        },
+        "documents": DOCUMENTS,
+    }
+    OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"Wrote {len(DOCUMENTS)} documents to {OUT}")
+
+
+if __name__ == "__main__":
+    main()

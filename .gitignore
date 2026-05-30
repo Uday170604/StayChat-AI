@@ -1,0 +1,29 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Secrets (never commit API keys)
+.env
+.env.*
+
+# FAISS index (rebuild with: python main.py --all)
+index/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Jupyter checkpoints (if you add a notebook later)
+.ipynb_checkpoints/
