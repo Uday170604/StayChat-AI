@@ -1,8 +1,8 @@
 # Submission — StayChat AI/ML RAG Assessment
 
-**Candidate:** *[Add your full name]*  
+**Candidate:** Uday Garodhara 
 **Role:** AI / ML Engineer  
-**Date:** *[Add submission date]*
+**Date:** 30/5/2026
 
 ## One-minute summary
 
