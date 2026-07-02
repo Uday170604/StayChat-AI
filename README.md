@@ -2,8 +2,6 @@
 
 Retrieval-Augmented Generation pipeline for answering natural-language questions about hotels from a curated document corpus (40 synthetic documents).
 
-> **Submission guide:** see [SUBMISSION.md](SUBMISSION.md) — add your name before submitting.
-
 ## Quick start (clone from GitHub)
 
 ```bash
