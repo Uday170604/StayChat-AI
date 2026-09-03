@@ -1,10 +1,10 @@
-# StayChat AI — RAG-Based Hotel Q&A System
+# StayChat AI - RAG-Based Hotel Q&A System
 
 Retrieval-Augmented Generation pipeline for answering natural-language questions about hotels from a curated document corpus (40 synthetic documents).
 
 ## Problem Statement
 
-Hotel guests and travel agents often need quick, specific answers ("does Hotel X have free breakfast and WiFi?", "what's the cancellation policy?") that generic search or static FAQ pages answer poorly. StayChat AI was built to evaluate whether a retrieval-augmented pipeline could answer these queries accurately, with citations, and without hallucinating facts not present in the source documents — a requirement for any customer-facing hospitality tool.
+Hotel guests and travel agents often need quick, specific answers ("does Hotel X have free breakfast and WiFi?", "what's the cancellation policy?") that generic search or static FAQ pages answer poorly. StayChat AI was built to evaluate whether a retrieval-augmented pipeline could answer these queries accurately, with citations, and without hallucinating facts not present in the source documents a requirement for any customer-facing hospitality tool.
 
 **Success criteria defined up front:**
 - Answers must be grounded only in the provided hotel documents (no hallucination)
